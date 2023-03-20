@@ -50,7 +50,8 @@ function App() {
       console.log(error);
     }
   }
-  useEffect(() => {connectWallet()}, []);
+  useEffect(() => {}
+    , []);
   return (
     <div className="App">
       <BrowserRouter>

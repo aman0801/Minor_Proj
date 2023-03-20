@@ -15,7 +15,21 @@ function App() {
     contract: null,
   });
   const [account, setAccount] = useState('');
+  
   const connectWallet = async () => {
+    if (window.ethereum) {
+      try {
+        const account = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        setAccount(account);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setErrorMessage("Install MetaMask");
+      alert(errorMessage);
+    }
     const contractAddress = "0x9c01efbbe3c345331c3a5c111f68ef7a561a9512";
     const contractABI = voting.abi;
     try {

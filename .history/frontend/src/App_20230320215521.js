@@ -15,42 +15,8 @@ function App() {
     contract: null,
   });
   const [account, setAccount] = useState('');
-  const connectWallet = async () => {
-    const contractAddress = "0x9c01efbbe3c345331c3a5c111f68ef7a561a9512";
-    const contractABI = voting.abi;
-    try {
-      const { ethereum } = window;
-
-      if (ethereum) {
-        const account = await ethereum.request({
-          method: "eth_requestAccounts",
-        });
-
-        window.ethereum.on("chainChanged", () => {
-          window.location.reload();
-        });
-
-        window.ethereum.on("accountsChanged", () => {
-          window.location.reload();
-        });
-
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(
-          contractAddress,
-          contractABI,
-          signer
-        );
-        setAccount(account);
-        setState({ provider, signer, contract });
-      } else {
-        alert("Please install metamask");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(() => {connectWallet()}, []);
+  useEffect(() => {}
+    , []);
   return (
     <div className="App">
       <BrowserRouter>

@@ -15,6 +15,8 @@ function App() {
     contract: null,
   });
   const [account, setAccount] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const connectWallet = async () => {
     const contractAddress = "0x9c01efbbe3c345331c3a5c111f68ef7a561a9512";
     const contractABI = voting.abi;

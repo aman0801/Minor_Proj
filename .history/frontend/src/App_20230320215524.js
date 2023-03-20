@@ -49,8 +49,11 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  }
-  useEffect(() => {connectWallet()}, []);
+  };
+  connectWallet();
+}
+  useEffect(() => {}
+    , []);
   return (
     <div className="App">
       <BrowserRouter>
