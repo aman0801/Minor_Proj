@@ -2,17 +2,13 @@ import React from 'react';
 import './MetaMask.css';
 import { useContext } from 'react';
 import { MetaMaskContext } from '../../context/authContext';
+import { ContractContext } from '../../context/contractContext';
 import {ethers} from 'ethers'
 import voting from "../../contracts/voting.json"
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-function App() {
-    const { account,setAccount } = useContext(MetaMaskContext);
-    const [state, setState] = useState({
-        provider: null,
-        signer: null,
-        contract: null,
-    });
+export default function MetaMask() {
+    const { setAccount } = useContext(MetaMaskContext);
+    const { setState } = useContext(ContractContext);
     const connectWallet = async () => {
         const contractAddress = "0x9c01efbbe3c345331c3a5c111f68ef7a561a9512";
         const contractABI = voting.abi;
@@ -62,4 +58,3 @@ function App() {
   );
 }
 
-export default App;
