@@ -4,14 +4,14 @@ import { useContext } from 'react';
 import { MetaMaskContext } from '../../context/authContext';
 import { ContractContext } from '../../context/contractContext';
 import {ethers} from 'ethers'
-import voting from "../../contracts/voting.json"
+import abi from "../../contracts/voting.json"
 import { useNavigate } from 'react-router-dom';
 export default function MetaMask() {
     const { setAccount } = useContext(MetaMaskContext);
     const { setState } = useContext(ContractContext);
     const connectWallet = async () => {
         const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
-        const contractABI = voting.abi;
+        const contractABI = abi.abi;
         try {
             const { ethereum } = window;
 

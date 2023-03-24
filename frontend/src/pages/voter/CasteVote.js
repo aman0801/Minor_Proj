@@ -3,13 +3,20 @@ import './CastVote.css'
 import {useContext} from 'react'
 import {MetaMaskContext} from '../../context/authContext'
 import {ContractContext} from '../../context/contractContext'
+import {ethers} from 'ethers'
 const CastVote = () => {
   const {account} = useContext(MetaMaskContext)
   const {state} = useContext(ContractContext)
   console.log(state)
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
+    const{contract} = state;
+    const candidateName = e.target.candidateName.value
+    console.log(contract, candidateName)
+    const amt = {value: ethers.utils.parseEther('0.001')}
+    const vote = await contract.castVote(candidateName)
+    await vote.wait()
+    console.log("voted")
   }
   return (
     <div className='caste-vote'>
