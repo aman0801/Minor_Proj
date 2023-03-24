@@ -8,8 +8,10 @@ const CastVote = () => {
   console.log(state)
   return (
     <div>
-      <h1>CastVot</h1>
-
+      <h1>CastVote</h1>
+      <form>
+        {/* <label> */}
+      </form>
     </div>
   )
 }

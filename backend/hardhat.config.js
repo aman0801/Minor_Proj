@@ -1,31 +1,19 @@
-require("@nomiclabs/hardhat-waffle");
-require('dotenv').config()
-// const key = process.env.key;
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (hre) => {
-  const accounts = await hre.ethers.getSigners();
+require("@nomicfoundation/hardhat-toolbox");
 
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
+require("dotenv").config();
+/** @type import('hardhat/config').HardhatUserConfig */
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
+const GOERLI_URL = process.env.GOERLI_URL;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+module.exports = {
+  solidity: "0.8.17",
+  networks: {
+    goerli: {
+      url: GOERLI_URL,
+      accounts: [PRIVATE_KEY],
+    },
+  },
+};
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
-      module.exports = {
-        networks: {
-          goerli: {
-            url: 'https://eth-goerli.g.alchemy.com/v2/lrMLCJc_SMcwseFo2O_Uoppx2YvNuYwL',
-            accounts: [process.env.key]
-          }
-        },
-        solidity: "0.8.9",
-      };
-      
-// 0x9c01efbbe3c345331c3a5c111f68ef7a561a9512
-// 0x13d2a493bf331b84cf3a3cadb725160ff69652f72fc77995391af512283301cd
+// Address of contract: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+// Address of contract: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512

@@ -6,6 +6,7 @@ import {MetaMaskContext} from '../../context/authContext'
 import {ContractContext} from '../../context/contractContext'
 export default function Voter() {
     const {account} = useContext(MetaMaskContext)
+    
     return (
         <div>
         <h1>Voter</h1>
