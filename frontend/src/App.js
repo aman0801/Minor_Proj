@@ -15,7 +15,7 @@ function App() {
       <Navbar/>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to='/voter'/>}/>
+          <Route path="/" element={account===''?<Navigate to='metamask'/>:<Navigate to='/voter'/>}/>
           <Route path="login" element={<Login/>}/>
           <Route path="metamask" element={<Metamask/>}/>
           <Route path="signup" element={<SignUp/>}/>
