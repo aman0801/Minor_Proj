@@ -1,7 +1,7 @@
 import React from 'react'
 import './Voter.css'
 import {useContext,useState} from 'react'
-import CastVote from './CastVote.js'
+import CastVote from './CasteVote.js'
 import ViewVote from './ViewVote.js'
 import {MetaMaskContext} from '../../context/authContext'
 import {ContractContext} from '../../context/contractContext'

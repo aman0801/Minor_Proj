@@ -10,7 +10,7 @@ export default function MetaMask() {
     const { setAccount } = useContext(MetaMaskContext);
     const { setState } = useContext(ContractContext);
     const connectWallet = async () => {
-        const contractAddress = "0x9c01efbbe3c345331c3a5c111f68ef7a561a9512";
+        const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
         const contractABI = voting.abi;
         try {
             const { ethereum } = window;

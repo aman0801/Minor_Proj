@@ -9,6 +9,7 @@ const CastVote = () => {
   console.log(state)
   const handleSubmit = (e) => {
     e.preventDefault()
+    
   }
   return (
     <div className='caste-vote'>
