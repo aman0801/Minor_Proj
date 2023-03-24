@@ -1,0 +1,27 @@
+.voter .voter-options{
+    /*place all items side by side*/
+    display: flex;
+    /*align items to center*/
+    align-items: center;
+    /*justify items to center*/
+    justify-content: center;
+    /*height of the container*/
+    height: 100%;
+    /*width of the container*/
+    width: 100%;
+    /*padding*/
+    padding: 0 20px;
+}
+.voter .voter-options button{
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3f51b5;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.voter .voter-options button:hover{
+    background-color: #303f9f;
+}
