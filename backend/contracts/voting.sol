@@ -1,7 +1,7 @@
 //  SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-contract voting{
+contract Voting{
     string public candidate1 = "Manisha";
     string public candidate2 = "Rishika";
     uint noOfParticipants = 0;
@@ -9,6 +9,7 @@ contract voting{
 
     uint256 vote1;
     uint256 vote2;
+    
 
     event VoteCast(address indexed voter, string candidate);
 
@@ -27,7 +28,7 @@ contract voting{
         }
 
     }
-
+    
     function getWinner() public view returns(string memory){
         
         if(vote1 > vote2){
@@ -37,4 +38,17 @@ contract voting{
         }else
         return "Tie";
     }
-}
+
+    function getVotes(string memory candidate) public view returns(uint){
+    require(bytes(candidate).length > 0, "Candidate can't be empty");
+
+    if(keccak256(bytes(candidate)) == keccak256(bytes(candidate1))){
+        return vote1;
+    }else if(keccak256(bytes(candidate)) == keccak256(bytes(candidate2))){
+        return vote2;
+    }else{
+        revert("Invalid candidate name");
+      }
+    }
+
+} 
