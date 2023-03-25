@@ -14,27 +14,12 @@ export default function ViewVote() {
     const [candidate2Votes, setCandidate2Votes] = useState(0)
     useEffect(
         () => {
-            // const {contract} = state;
-            // const fetchCandidate1 = async () => {
-            //     const candidate1 = await contract.candidates1
-            //     console.log(candidate1)
-            //     setCandidate1(candidate1)
-            // }
-            // const fetchCandidate2 = async () => {
-            //     const candidate2 = await contract.candidates2
-            //     setCandidate2(candidate2.name)
-            // }
-            // fetchCandidate1()
-            // fetchCandidate2()
-            // const fetchVotes = async () => {
-            //     const votes = await contract.totalVotes()
-            //     console.log(votes)
-            // }
-            // fetchVotes()
+           
             const {contract} = state;
             console.log(contract)
-            function fetchVotes(name){
-                const vote = contract.getVotes(name)
+            async function fetchVotes(name){
+                console.log(contract.getVotes())
+                const vote = await contract.getVotes(name)
                 return vote
             }
             console.log(fetchVotes('Manisha'))
