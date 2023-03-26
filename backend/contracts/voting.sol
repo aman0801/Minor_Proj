@@ -1,9 +1,9 @@
 //  SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-contract Voting{
-    string public candidate1 = "Manisha";
-    string public candidate2 = "Rishika";
+contract voting{
+    string public candidate1 = "Narendra Modi";
+    string public candidate2 = "Arvinda Kejriwal";
     uint noOfParticipants = 0;
     mapping(address => bool) public votes;
 
@@ -51,4 +51,4 @@ contract Voting{
       }
     }
 
-} 
+}

@@ -7,7 +7,6 @@ import {ethers} from 'ethers'
 const CastVote = () => {
   const {account} = useContext(MetaMaskContext)
   const {state} = useContext(ContractContext)
-  console.log(state)
   const handleSubmit = async (e) => {
     e.preventDefault()
     const{contract} = state;

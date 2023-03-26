@@ -16,13 +16,15 @@ export default function ViewVote() {
         () => {
            
             const {contract} = state;
-            console.log(contract)
-            async function fetchVotes(name){
-                console.log(contract.getVotes())
-                const vote = await contract.getVotes(name)
-                return vote
+            const getVotes = async () => {
+                state.provider.getCode('0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512').then((res) => {
+                    console.log(res)
+                })
             }
-            console.log(fetchVotes('Manisha'))
+            getVotes()
+            // contract.getVotes('Manisha').then((res) => {
+            //     console.log(res)
+            // })
         },
         [])
 
