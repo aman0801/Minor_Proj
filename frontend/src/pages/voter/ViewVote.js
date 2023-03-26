@@ -8,8 +8,8 @@ import {ethers} from 'ethers'
 export default function ViewVote() {
     const {account} = useContext(MetaMaskContext)
     const {state} = useContext(ContractContext)
-    const [candidate1, setCandidate1] = useState('Manisha')
-    const [candidate2, setCandidate2] = useState('Rishika')
+    const [candidate1, setCandidate1] = useState('Narendra Modi')
+    const [candidate2, setCandidate2] = useState('Arvinda Kejriwal')
     const [candidate1Votes, setCandidate1Votes] = useState(0)
     const [candidate2Votes, setCandidate2Votes] = useState(0)
     useEffect(
@@ -17,14 +17,12 @@ export default function ViewVote() {
            
             const {contract} = state;
             const getVotes = async () => {
-                state.provider.getCode('0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512').then((res) => {
-                    console.log(res)
-                })
+                const votes1 = await contract.getVotes(candidate1);
+                const votes2 = await contract.getVotes(candidate2);
+                setCandidate1Votes(votes1.toString())
+                setCandidate2Votes(votes2.toString())
             }
             getVotes()
-            // contract.getVotes('Manisha').then((res) => {
-            //     console.log(res)
-            // })
         },
         [])
 

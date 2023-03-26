@@ -25,7 +25,7 @@ export default function MetaMask() {
       });
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
-      const contract = new ethers.Contract("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512", abi.abi, signer);
+      const contract = new ethers.Contract("0x5f57daf5508DD7886BAcDbC888B81466B307B177", abi.abi, signer);
       setAccount(account[0]);
       setState({ provider, signer, contract });
       navigate('/');
