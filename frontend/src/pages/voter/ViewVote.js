@@ -3,8 +3,6 @@ import './ViewVote.css';
 import {useContext} from 'react'
 import {MetaMaskContext} from '../../context/authContext'
 import {ContractContext} from '../../context/contractContext'
-import {ethers} from 'ethers'
-
 export default function ViewVote() {
     const {account} = useContext(MetaMaskContext)
     const {state} = useContext(ContractContext)

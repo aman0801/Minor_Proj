@@ -12,7 +12,7 @@ const CastVote = () => {
     const{contract} = state;
     const candidateName = e.target.candidateName.value
     console.log(contract, candidateName)
-    const amt = {value: ethers.utils.parseEther('0.001')}
+    //const amt = {value: ethers.utils.parseEther('0.001')}
     const vote = await contract.castVote(candidateName)
     await vote.wait()
     console.log("voted")
