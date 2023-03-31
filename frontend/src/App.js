@@ -19,8 +19,8 @@ function App() {
           <Route path="login" element={<Login/>}/>
           <Route path="metamask" element={<Metamask/>}/>
           <Route path="signup" element={<SignUp/>}/>
-          <Route path="voter" element={<Voter/>}/>
-          <Route path="chairman" element={<ChairMan/>}/>
+          <Route path="voter" element={account===''?<Navigate to='/metamask'/>:<Voter/>}/>
+          <Route path="chairman" element={account===''?<Navigate to='/metamask'/>:<ChairMan/>}/>
         </Routes>
       </BrowserRouter>       
     </div>

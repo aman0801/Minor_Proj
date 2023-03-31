@@ -1,6 +1,25 @@
 .navbar{
     margin: 0px;
+    padding-top: 20px;
     padding: 10px;
-    background-color: #95eef1;
+    background-color: #000;
     height: 50px;
+    width: 100%;
+    max-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+}
+.navbar .logo-img{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+.navbar .nav-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
 }

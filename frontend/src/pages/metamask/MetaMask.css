@@ -1,3 +1,12 @@
+.MetaMask{
+    
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .MetaMask button{
     background-color: #964B00;
     color: #fff;
