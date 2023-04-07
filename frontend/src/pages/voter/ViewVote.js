@@ -22,7 +22,7 @@ export default function ViewVote() {
             }
             getVotes()
         },
-        [])
+        [account,state])
 
     return (
         <div className='view-vote'>

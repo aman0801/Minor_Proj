@@ -8,14 +8,16 @@ import Voter from './pages/voter/Voter'
 import ChairMan from './pages/chairman/ChairMan'
 import {useContext} from 'react'
 import {MetaMaskContext} from './context/authContext'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/home/home';
 function App() {
   const {account} = useContext(MetaMaskContext)
   return (
     <div className="App">
-      <Navbar/>
       <BrowserRouter>
+      <Navbar/>
         <Routes>
-          <Route path="/" element={account===''?<Navigate to='metamask'/>:<Navigate to='/voter'/>}/>
+          <Route path="/" element={account===''?<Navigate to='metamask'/>:<Home/>}/>
           <Route path="login" element={<Login/>}/>
           <Route path="metamask" element={<Metamask/>}/>
           <Route path="signup" element={<SignUp/>}/>
