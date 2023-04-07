@@ -4,7 +4,7 @@
 .signup h2{
     font-size: 2rem;
     font-weight: 600;
-    color: #3f51b5;
+    color: #000;
     text-align: center;
     margin: 20px;
 }
@@ -34,19 +34,9 @@
 .signup .form label{
     font-size: 1.2rem;
     font-weight: 600;
-    color: #3f51b5;
+    color: #000;
 }
-.signup .form .submit-button{
-    margin: auto;
-    max-width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3f51b5;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-.signup .form .submit-button:hover{
-    background-color: #303f9f;
+.signup .form button{
+    max-width: 10vw;
+    margin: 10px auto;
 }

@@ -1,4 +1,5 @@
 import './Login.css'
+import Button from 'react-bootstrap/Button'
 export default function Login() {
     const handleSubmit= (e)=>{
 
@@ -11,7 +12,7 @@ export default function Login() {
             <input type="email" name="email" placeholder="Enter your email" required/>
             <label htmlFor="password">Password</label>
             <input type="password" name="password" placeholder="Enter your password" required/>
-            <button type="submit" className="submit-button">Login</button>
+            <Button type="submit" variant='dark' size='lg'>Login</Button>
         </form>
         </div>
     )

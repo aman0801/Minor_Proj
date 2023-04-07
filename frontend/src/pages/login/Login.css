@@ -4,7 +4,7 @@
 .login h2{
     font-size: 2rem;
     font-weight: 600;
-    color: #3f51b5;
+    color: #000;
     text-align: center;
     margin: 20px;
 }
@@ -36,19 +36,10 @@
 .login .form label{
     font-size: 1.5rem;
     font-weight: 600;
-    color: #3f51b5;
+    color: #000;
 }
-.login .form .submit-button{
-    margin: auto;
-    max-width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3f51b5;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-.login .form .submit-button:hover{
-    background-color: #303f9f;
+.login .form button{
+    margin: 20px auto;
+    min-width: 7vw;
+    
 }

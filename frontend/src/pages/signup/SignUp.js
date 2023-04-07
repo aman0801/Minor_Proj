@@ -1,4 +1,5 @@
 import './SignUp.css'
+import Button from 'react-bootstrap/Button'
 export default function SignUp() {
     const handleSubmit = (e) => {
     }    
@@ -16,7 +17,7 @@ export default function SignUp() {
             <input type="text" name="voterId" placeholder="Enter your voter id" required/>
             <label htmlFor="metamaskId">Metamask Id</label>
             <input type="text" name="metamaskId" placeholder="Enter your metamask id" required/>
-            <button type="submit" className="submit-button">SignUp</button>
+            <Button type="submit" variant='dark' size='lg'>SignUp</Button>
         </form>    
         </div>
     )
