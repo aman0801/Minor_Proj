@@ -3,6 +3,7 @@ import './ViewVote.css';
 import {useContext} from 'react'
 import {MetaMaskContext} from '../../context/authContext'
 import {ContractContext} from '../../context/contractContext'
+import Table from 'react-bootstrap/Table';
 export default function ViewVote() {
     const {account} = useContext(MetaMaskContext)
     const {state} = useContext(ContractContext)
@@ -26,17 +27,28 @@ export default function ViewVote() {
 
     return (
         <div className='view-vote'>
-            <h1>View Vote</h1>
-            <div className='candidates'>
-                <div className='names'>
-                <h2>{candidate1}</h2>
-                <h2>{candidate2}</h2>
-                </div>
-                <div className='votes'>
-                <h2>{candidate1Votes}</h2>
-                <h2>{candidate2Votes}</h2>
-                </div>
-            </div>
+        <h1>Voting Table</h1>
+            <Table striped bordered hover variant="dark">
+      <thead>
+        <tr>
+            <th>#</th>
+          <th>Candidate Name</th>
+          <th>Votes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>{candidate1}</td>
+            <td>{candidate1Votes}</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>{candidate2}</td>
+            <td>{candidate2Votes}</td>
+        </tr>
+      </tbody>
+    </Table>
         </div>
     )
 }

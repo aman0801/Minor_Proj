@@ -28,7 +28,7 @@ export default function NavbarAll(){
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
           <Nav.Link href="/" onClick={handleReroute}>Home</Nav.Link>
-          <Nav.Link href="/viewvote" onClick={handleReroute}>View Voter</Nav.Link>
+          <Nav.Link href="/viewvote" onClick={handleReroute}>View Vote</Nav.Link>
           <Nav.Link href="/castevote" onClick={handleReroute}>Caste Vote</Nav.Link>
             <Nav.Link href="/help" onClick={handleReroute}>Help</Nav.Link>
           </Nav>

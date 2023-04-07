@@ -6,6 +6,7 @@
   height: 100%;
   width: 100%;
   padding: 0 20px;
+  
 }
 .caste-vote .caste-form{
   display: flex;
@@ -19,7 +20,7 @@
 .caste-vote .caste-form label{
     font-size: 1.5rem;
     font-weight: 600;
-    color: #3f51b5;
+    color: #000;
 }
 .caste-vote .caste-form input{
     margin: 10px auto;
@@ -37,7 +38,7 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #3f51b5;
+    background-color: #000;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;

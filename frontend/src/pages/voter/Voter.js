@@ -20,11 +20,7 @@ export default function Voter() {
     }
     return (
         <div className='voter'>
-            <div className='voter-options'>
-                <button onClick={(e)=>{switchView("castVote")}}>Cast Vote</button>
-                <button onClick={(e)=>{switchView("viewVote")}}>View Vote</button>
-            </div>
-            {currentView === 'castVote' ? <CastVote/> : <ViewVote/>}
+            <h1>voter</h1>
         </div>
     )
 }
