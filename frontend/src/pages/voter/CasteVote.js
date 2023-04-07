@@ -4,6 +4,7 @@ import {useContext} from 'react'
 import {MetaMaskContext} from '../../context/authContext'
 import {ContractContext} from '../../context/contractContext'
 import {ethers} from 'ethers'
+import Button from 'react-bootstrap/esm/Button'
 const CastVote = () => {
   const {account} = useContext(MetaMaskContext)
   const {state} = useContext(ContractContext)
@@ -24,7 +25,7 @@ const CastVote = () => {
       <form onSubmit={(e)=>{handleSubmit(e)}} className='caste-form'>
         <label>Candidate Name</label>
         <input type="text" name="candidateName" />
-        <button type="submit">Cast Vote</button>
+        <Button variant="dark" size="lg" type="submit">Caste Vote</Button>
       </form>
     </div>
   )
