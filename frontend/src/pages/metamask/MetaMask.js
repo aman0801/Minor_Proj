@@ -32,7 +32,7 @@ export default function MetaMask() {
       const contract = new ethers.Contract("0x5f57daf5508DD7886BAcDbC888B81466B307B177", abi.abi, signer);
       setAccount(account[0]);
       setState({ provider, signer, contract });
-      const expectedmetaMaskAccount = document.metaMaskId;
+      const expectedmetaMaskAccount = document.metamaskId.toLowerCase();
       if (account[0] !== expectedmetaMaskAccount) {
         alert("Please connect to the correct MetaMask account");
         logout();
