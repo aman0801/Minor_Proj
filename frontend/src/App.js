@@ -24,15 +24,15 @@ function App() {
       <BrowserRouter>
       <Navbar/>
         <Routes>
-          <Route path="/" element={account===''||user===''?<Navigate to='login'/>:<Home/>}/>
-          <Route path="login" element={user===''?<Login/>:<Navigate to='/metamask'/>}/>
-          <Route path="metamask" element={user===''?<Navigate to='/login'/>:<Metamask/>}/>
-          <Route path="signup" element={account===''||user===''?<SignUp/>:<Navigate to='/'/>}/>
-          <Route path="voter" element={account===''||user===''?<Navigate to='/login'/>:<Voter/>}/>
-          <Route path="viewvote" element={account===''||user===''?<Navigate to='/login'/>:<ViewVoter/>}/>
-          <Route path="castevote" element={account===''||user===''?<Navigate to='/login'/>:<CasteVoter/>}/>
-          <Route path="chairman" element={account===''||user===''?<Navigate to='/login'/>:<ChairMan/>}/>
-          <Route path="help" element={account===''||user===''?<Navigate to='/login'/>:<Help/>}/>
+          <Route path="/" element={account===''||user===null?<Navigate to='login'/>:<Home/>}/>
+          <Route path="login" element={user===null?<Login/>:<Navigate to='/metamask'/>}/>
+          <Route path="metamask" element={user===null?<Navigate to='/login'/>:<Metamask/>}/>
+          <Route path="signup" element={account===''||user===null?<SignUp/>:<Navigate to='/'/>}/>
+          <Route path="voter" element={account===''||user===null?<Navigate to='/login'/>:<Voter/>}/>
+          <Route path="viewvote" element={account===''||user===null?<Navigate to='/login'/>:<ViewVoter/>}/>
+          <Route path="castevote" element={account===''||user===null?<Navigate to='/login'/>:<CasteVoter/>}/>
+          <Route path="chairman" element={account===''||user===null?<Navigate to='/login'/>:<ChairMan/>}/>
+          <Route path="help" element={account===''||user===null?<Navigate to='/login'/>:<Help/>}/>
         </Routes>
       </BrowserRouter>}       
     </div>

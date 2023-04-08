@@ -13,6 +13,9 @@ export const useLogout = () => {
     setIsPending(true)
 
     try {
+      //change user status to offline
+      console.log("changing user status to offline");
+      await db.collection('users').doc(user.uid).update({online:false})
       // sign the user out
       console.log("signing out");
       await projectAuth.signOut()
