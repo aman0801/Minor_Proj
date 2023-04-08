@@ -1,8 +1,14 @@
 import './Login.css'
 import Button from 'react-bootstrap/Button'
+import {useLogin} from '../../hooks/useLogin'
 export default function Login() {
+    const {login,isPending,error} = useLogin()
     const handleSubmit= (e)=>{
-
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        login(email,password)
+        
     }
     return (
         <div className="login">

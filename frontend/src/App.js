@@ -8,6 +8,7 @@ import Voter from './pages/voter/Voter'
 import ChairMan from './pages/chairman/ChairMan'
 import {useContext} from 'react'
 import {MetaMaskContext} from './context/authContext'
+import { useAuthContext } from './hooks/useAuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/home/home';
 import ViewVoter from './pages/voter/ViewVote';
@@ -15,22 +16,25 @@ import CasteVoter from './pages/voter/CasteVote';
 import Help from './pages/help/help';
 function App() {
   const {account} = useContext(MetaMaskContext)
+  const {user,authIsReady} = useAuthContext()
+  console.log(user);
   return (
     <div className="App">
+      {authIsReady&&
       <BrowserRouter>
       <Navbar/>
         <Routes>
-          <Route path="/" element={account===''?<Navigate to='metamask'/>:<Home/>}/>
-          <Route path="login" element={<Login/>}/>
-          <Route path="metamask" element={<Metamask/>}/>
-          <Route path="signup" element={<SignUp/>}/>
-          <Route path="voter" element={account===''?<Navigate to='/metamask'/>:<Voter/>}/>
-          <Route path="viewvote" element={account===''?<Navigate to='/metamask'/>:<ViewVoter/>}/>
-          <Route path="castevote" element={account===''?<Navigate to='/metamask'/>:<CasteVoter/>}/>
-          <Route path="chairman" element={account===''?<Navigate to='/metamask'/>:<ChairMan/>}/>
-          <Route path="help" element={<Help/>}/>
+          <Route path="/" element={account===''||user===''?<Navigate to='login'/>:<Home/>}/>
+          <Route path="login" element={user===''?<Login/>:<Navigate to='/metamask'/>}/>
+          <Route path="metamask" element={user===''?<Navigate to='/login'/>:<Metamask/>}/>
+          <Route path="signup" element={account===''||user===''?<SignUp/>:<Navigate to='/'/>}/>
+          <Route path="voter" element={account===''||user===''?<Navigate to='/login'/>:<Voter/>}/>
+          <Route path="viewvote" element={account===''||user===''?<Navigate to='/login'/>:<ViewVoter/>}/>
+          <Route path="castevote" element={account===''||user===''?<Navigate to='/login'/>:<CasteVoter/>}/>
+          <Route path="chairman" element={account===''||user===''?<Navigate to='/login'/>:<ChairMan/>}/>
+          <Route path="help" element={account===''||user===''?<Navigate to='/login'/>:<Help/>}/>
         </Routes>
-      </BrowserRouter>       
+      </BrowserRouter>}       
     </div>
   );
 }

@@ -11,7 +11,6 @@ export default function SignUp() {
         const voterId=e.target.voterId.value;
         const metamaskId=e.target.metamaskId.value;
         signup(email,password,name,voterId,metamaskId);
-
     }    
     return (
         <div className="signup">
@@ -28,7 +27,7 @@ export default function SignUp() {
             <label htmlFor="metamaskId">Metamask Id</label>
             <input type="text" name="metamaskId" placeholder="Enter your metamask id" required/>
             {!isPending&&<Button type="submit" variant='dark' size='lg'>SignUp</Button>}
-            {isPending&&<Button type="submit" variant='dark' size='lg' locked={true}>SignUp</Button>}
+            {isPending&&<Button type="submit" variant='dark' size='lg' disabled>Loading</Button>}
         </form>    
         </div>
     )

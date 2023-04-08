@@ -13,12 +13,11 @@ export const useLogout = () => {
     setIsPending(true)
 
     try {
-      // update user status
-      await db.collection('users').doc(user.uid).update({online:false})
       // sign the user out
+      console.log("signing out");
       await projectAuth.signOut()
-      
       // dispatch logout action
+      console.log("dispatching logout");
       dispatch({ type: 'LOGOUT' })
 
       // update state
@@ -27,6 +26,7 @@ export const useLogout = () => {
         setError(null)
       }
       setIsPending(false)
+      
     } 
     catch(err) {
       if (!isCancelled) {
