@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 export default function NavbarAll(){
     const nav=useNavigate();
     const handleReroute = (e) => {
-
+        console.log(e.target.getAttribute('href'));
         e.preventDefault();
         nav(e.target.getAttribute('href'));
     }
@@ -18,7 +18,7 @@ export default function NavbarAll(){
     return(
         <Navbar bg="dark" variant='dark' expand="lg" className='navbar'>
       <Container>
-        <Navbar.Brand href="#home"><img src={logo} className="logo-img"
+        <Navbar.Brand href='/'><img src={logo} className="logo-img"
         alt="logo"
         style={
             {"width":'50px'}
