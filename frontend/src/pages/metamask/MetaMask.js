@@ -3,14 +3,18 @@ import './MetaMask.css';
 import { useContext } from 'react';
 import { MetaMaskContext } from '../../context/authContext';
 import { ContractContext } from '../../context/contractContext';
+import useDocument from '../../hooks/useDocument';
 import { ethers } from 'ethers'
 import abi from "../../contracts/voting.json"
+import {useAuthContext} from '../../hooks/useAuthContext';
 import { useNavigate } from 'react-router-dom';
+import {useLogout} from '../../hooks/useLogout';
 export default function MetaMask() {
+  const {logout,ispending,error} = useLogout();
+  const { user } = useAuthContext();
   const { setAccount } = useContext(MetaMaskContext);
   const { setState } = useContext(ContractContext);
-
-
+  const { document } = useDocument('users', user.uid);
   const connectWallet = async () => {
     const { ethereum } = window;
     if (ethereum) {
@@ -28,6 +32,11 @@ export default function MetaMask() {
       const contract = new ethers.Contract("0x5f57daf5508DD7886BAcDbC888B81466B307B177", abi.abi, signer);
       setAccount(account[0]);
       setState({ provider, signer, contract });
+      const expectedmetaMaskAccount = document.metaMaskId;
+      if (account[0] !== expectedmetaMaskAccount) {
+        alert("Please connect to the correct MetaMask account");
+        logout();
+      }
       navigate('/');
     }
   }
