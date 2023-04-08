@@ -1,7 +1,17 @@
 import './SignUp.css'
 import Button from 'react-bootstrap/Button'
+import { useSignup } from '../../hooks/useSignup';
 export default function SignUp() {
+    const {signup,isPending,error}=useSignup();
     const handleSubmit = (e) => {
+        e.preventDefault();
+        const name=e.target.name.value;
+        const email=e.target.email.value;
+        const password=e.target.password.value;
+        const voterId=e.target.voterId.value;
+        const metamaskId=e.target.metamaskId.value;
+        signup(email,password,name,voterId,metamaskId);
+
     }    
     return (
         <div className="signup">
@@ -17,7 +27,8 @@ export default function SignUp() {
             <input type="text" name="voterId" placeholder="Enter your voter id" required/>
             <label htmlFor="metamaskId">Metamask Id</label>
             <input type="text" name="metamaskId" placeholder="Enter your metamask id" required/>
-            <Button type="submit" variant='dark' size='lg'>SignUp</Button>
+            {!isPending&&<Button type="submit" variant='dark' size='lg'>SignUp</Button>}
+            {isPending&&<Button type="submit" variant='dark' size='lg' locked={true}>SignUp</Button>}
         </form>    
         </div>
     )

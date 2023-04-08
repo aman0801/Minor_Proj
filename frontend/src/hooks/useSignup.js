@@ -8,7 +8,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
 
-  const signup = async (email, password, displayName) => {
+  const signup = async (email, password,name,voterId,metamaskId) => {
     setError(null)
     setIsPending(true)
   
@@ -22,8 +22,10 @@ export const useSignup = () => {
       // create a user document
       await db.collection('users').doc(res.user.uid).set({ 
         online: true,
-        displayName,
-        photoURL: imgUrl,
+        name,
+        email,
+        voterId,
+        metamaskId
       })
 
       // dispatch login action
