@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
-import { projectAuth, projectStorage, db } from '../firebase/config'
+import { projectAuth, db } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
+import { useNavigate } from 'react-router-dom';
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
+  const navigate=useNavigate();
 
   const signup = async (email, password,name,voterId,metamaskId) => {
     setError(null)
@@ -34,6 +36,7 @@ export const useSignup = () => {
       if (!isCancelled) {
         setIsPending(false)
         setError(null)
+        navigate('/');
       }
     } 
     catch(err) {
