@@ -1,0 +1,20 @@
+.home-navbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    width: 100%;
+}
+.home-navbar .issues{
+    text-align: left;
+    align-items: center;
+}
+.home-navbar .issues button{
+    margin-left: 15vw ;
+}
+
+.home-navbar .maps{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    width: 50%;
+    margin-top: 22px;
+}

@@ -1,0 +1,9 @@
+.link-text {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    /* cursor: default; */
+  }
+  
