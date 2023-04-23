@@ -10,6 +10,8 @@
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
     "firebase": "^8.10.1",
+    "mdb-react-ui-kit": "^6.0.0",
+    "mdbreact": "^4.17.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
