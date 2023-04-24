@@ -1,0 +1,12 @@
+.help-page{
+    height: 90vh;
+    width: 100vw;
+    padding-top: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    align-items: center;
+}
+.help-page .text-area{
+    height: 20vh;
+    width: 90vw;
+}
