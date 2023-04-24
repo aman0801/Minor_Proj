@@ -6,7 +6,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/login');
+    navigate('/ViewVote');
   };
 
   return (
