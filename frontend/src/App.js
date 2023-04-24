@@ -14,6 +14,7 @@ import Home from './pages/home/home';
 import ViewVoter from './pages/voter/ViewVote';
 import CasteVoter from './pages/voter/CasteVote';
 import Help from './pages/help/help';
+import Footer from './components/Footer';
 function App() {
   const {account} = useContext(MetaMaskContext)
   const {user,authIsReady} = useAuthContext()
@@ -34,6 +35,7 @@ function App() {
           <Route path="chairman" element={account===''||user===null?<Navigate to='/login'/>:<ChairMan/>}/>
           <Route path="help" element={account===''||user===null?<Navigate to='/login'/>:<Help/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>}       
     </div>
   );
