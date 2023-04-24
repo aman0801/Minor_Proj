@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "react-awesome-button": "^7.0.5"
-  },
-  "devDependencies": {
-    "hardhat": "^2.13.0"
-  }
-}
