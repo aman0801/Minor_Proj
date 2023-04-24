@@ -1,7 +1,7 @@
 import './App.css';
 import Login from './components/Login';
 import ViewVote from './components/ViewVote';
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter,Navigate,Route,Routes} from 'react-router-dom'
 
 function App() {
   return (
