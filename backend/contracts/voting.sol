@@ -16,6 +16,7 @@ contract voting{
     function castVote(string memory candidate) public{
         require(bytes(candidate).length > 0, "Candidate can't be empty");
         require(votes[msg.sender] == false, "You have already voted");
+        
 
         emit VoteCast(msg.sender, candidate);
         votes[msg.sender] = true;
