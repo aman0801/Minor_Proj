@@ -16,6 +16,10 @@ const CastVote = () => {
     const{contract} = state;
     const candidateName = selected;
     console.log(candidateName)
+    if(candidateName==="Please select an option"){
+      alert("Please select an option")
+      return
+    }
     const vote = await contract.castVote(candidateName);
     await vote.wait()
     console.log("voted")
